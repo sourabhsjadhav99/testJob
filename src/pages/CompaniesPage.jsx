@@ -2,19 +2,14 @@ import React from "react";
 import companyImg from "../assets/companies.webp";
 import Img from "../components/Img";
 
-import JobDetailsCard from "../components/cards/JobDetailsCard";
 import { useDispatch, useSelector } from "react-redux";
 import SkeletonLoader from "../components/skeletons/Skeleton";
 import CompanySearchForm from "../components/forms/CompanySearchForm";
+import CompanyCard from "../components/cards/CompanyCard";
 
 function CompaniesPage() {
-  // Get state values from the Redux store
-  const companyDetails = useSelector((state) => state.company.details);
-  const loading =useSelector((state) => state.company.loading);
-
   // Initialize dispatch
   const dispatch = useDispatch();
-
 
   return (
     <div className="w-full bg-white">
@@ -72,24 +67,12 @@ function CompaniesPage() {
             <CompanySearchForm />
           </div>
         </div>
-        {!loading ? (
-          <div className="flex  justify-center p-2 lg:p-5 ">
-            <div className="w-[100%] lg:w-[95%] xl:w-[90%] flex flex-col md:flex-row justify-center gap-10 ">
-              <div className={`w-[100%] md:w-[40%]`}>
-                <CompanyList />
-              </div>
-              {jobs?.length > 0 &&<div
-                className={`w-[100%] md:w-[60%] border rounded md:h-[167vh] overflow-hidden `}
-              >
-                <div className="job-details-container">
-                  <JobDetailsCard />
-                </div>
-              </div>}
-            </div>
+
+        <div className="flex justify-center p-2 lg:p-5 ">
+          <div className="w-[100%] md:w-[70%] flex justify-center">
+            <CompanyCard />
           </div>
-        ) : (
-          <SkeletonLoader />
-        )}
+        </div>
       </div>
     </div>
   );

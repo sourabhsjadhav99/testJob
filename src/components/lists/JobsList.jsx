@@ -11,7 +11,7 @@ const JobList = () => {
   useEffect(() => {
     setData(jobState);
   }, [jobState]);
-  console.log(jobState);
+
 
   return (
     <div className="bg-white">

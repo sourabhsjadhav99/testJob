@@ -7,6 +7,7 @@ import { useFirebase } from "../../FirebaseProvider";
 import { GiElectric } from "react-icons/gi";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import spinner from "../../assets/spinner.svg"
 import DetailsCardSkeleton from "../skeletons/DetailsCardSkeleton";
 const JobDetailsCard_ = () => {
   const selectedJob = useSelector((state) => state.jobDetails.selectedJob);
@@ -27,7 +28,7 @@ const JobDetailsCard_ = () => {
   };
 
   if (!selectedJob) {
-    return <div className="p-5">Please select a job to see the details.</div>;
+    return  <p className="p-5 text-lg">Oops! We're having trouble retrieving data from API right now. Please try again later.</p>
   }
 
   let handleCardClick = () => {

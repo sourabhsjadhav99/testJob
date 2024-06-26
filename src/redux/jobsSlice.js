@@ -18,7 +18,6 @@ export const fetchJobs = createAsyncThunk(
                 }
             };
             const response = await axios.request(options);
-            console.log("data - ",response.data);
             return response.data.data;
 
         } catch (error) {
@@ -47,7 +46,7 @@ const jobSearchSlice = createSlice({
             })
             .addCase(fetchJobs.rejected, (state, action) => {
                 state.loading = false;
-                state.error = action.error.message;
+                state.error = action.payload;
             });
     }
 });

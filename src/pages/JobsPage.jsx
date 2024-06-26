@@ -11,7 +11,8 @@ function JobsPage() {
   const isCardClicked = useSelector((state) => state.jobDetails.isCardClicked);
   const jobs = useSelector((state) => state.jobSearch.jobs);
   const loading = useSelector((state) => state.jobSearch.loading);
-  console.log(jobs)
+  const error = useSelector((state) => state.jobSearch.error);
+
 
   // Initialize dispatch
   const dispatch = useDispatch();
@@ -33,6 +34,7 @@ function JobsPage() {
       >
         <JobSearch />
       </div>
+      {error && <p className="p-5 text-center">Error: {error}</p>}
       {!loading ? (
         <div className="flex  justify-center p-2 lg:p-5 ">
           <div className="w-[100%] lg:w-[95%] xl:w-[90%] flex flex-col md:flex-row justify-center gap-10 ">

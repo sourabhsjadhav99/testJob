@@ -8,7 +8,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import jobSearchReducer from './jobsSlice';
 
 import jobDetailReducer from './jobDetailSlice';
-import  companyDetailsReducer from "./companyDetailsSlice"
+import companyDetailsReducer from './companyDetailsSlice';
 
 // Configure the Redux store by combining the jobs and jobDetails reducers
 
@@ -24,7 +24,7 @@ const store = configureStore({
         jobSearch: jobSearchReducer,
         jobDetails: jobDetailReducer,
         locationSearch: locationSearchReducer,
-        companyDetails:companyDetailsReducer
+        company: companyDetailsReducer
   
     },
 });

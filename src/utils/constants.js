@@ -48,9 +48,12 @@ let footerCountries = [
 ];
 
 
-let apikey = "ae420e47d6msh311175ea77b1a18p1b2273jsn28c0681b350b"
+let apikey = 'abc8404994msh42acd033ee38d42p1b5df4jsn919912b18f41' || '61b3249e85mshfa49ae12488d239p17b29cjsndbcfc53a7d51' ||  'b736a22104msh0bb7d9300b32db5p1cf470jsn61a8507cda76'
 let apiHost = "linkedin-data-api.p.rapidapi.com"
 export {
     navLinks,
     footerCountries, apikey,apiHost
 }
+
+
+//99 92 35
